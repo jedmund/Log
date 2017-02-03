@@ -68,7 +68,7 @@ open class Logger {
     }
     
     /// The queue used for logging.
-    private let queue = DispatchQueue(label: "delba.log")
+    public let queue = DispatchQueue(label: "delba.log")
     
     /**
      Creates and returns a new logger.
@@ -174,7 +174,7 @@ open class Logger {
      - parameter column:     The column at which the log happens.
      - parameter function:   The function in which the log happens.
      */
-    private func log(_ level: Level, _ items: [Any], _ separator: String, _ terminator: String, _ file: String, _ line: Int, _ column: Int, _ function: String) {
+    public func log(_ level: Level, _ items: [Any], _ separator: String, _ terminator: String, _ file: String, _ line: Int, _ column: Int, _ function: String) {
         guard enabled && level >= minLevel else { return }
         
         let date = Date()

@@ -96,7 +96,7 @@ public class Formatter: Formatters {
      
      - returns: A formatted string.
      */
-    internal func format(level: Level, items: [Any], separator: String, terminator: String, file: String, line: Int, column: Int, function: String, date: Date) -> String {
+    public func format(level: Level, items: [Any], separator: String, terminator: String, file: String, line: Int, column: Int, function: String, date: Date) -> String {
         let arguments = components.map { (component: Component) -> CVarArg in
             switch component {
             case .date(let dateFormat):
